@@ -1,5 +1,5 @@
 {
-	"name": "mahjong-score-calculator",
+	"name": "mahjong-helper",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
@@ -12,6 +12,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-vercel": "^4.0.5",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"svelte": "^5.0.0",
