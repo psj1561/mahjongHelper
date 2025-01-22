@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* 기본 스타일 */
+body {
+  margin: 0 auto;
+  width: 960px;
+  font-family: 'Pretendard', 'Noto Sans KR',  -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  line-height: 1.6;
+  letter-spacing: -0.3px;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+#top-nav {
+  color: white;
+  background-color: rgb(59, 102, 23);
+  font-size: 24px;
+  padding: 10px 0;
+  margin: 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#top-nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#top-nav li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#content {
+  background-color: rgb(125, 255, 171);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 860px;
+}
+
+.contentes {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통 버튼 스타일 */
+.button-base {
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+/* 기존 버튼 클래스들에 공통 스타일 적용 */
+.toggle-button,
+.btn,
+.submit-btn,
+.tile_btn {
+  composes: button-base;
+}
+
+/* submit-btn과 btn의 중복 스타일 제거 */
+.btn {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  margin-top: 16px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+}
+
+.btn:active {
+  background-color: #d0d0d0;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* 추가 스타일 */
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+/* 기본 toggle-button-group 스타일 */
+.toggle-button-group {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* 구분선이 필요한 경우를 위한 추가 클래스 */
+.toggle-button-group.with-border {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d0d0d0;
+  position: relative;
+}
+
+.toggle-button-group.with-border::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, 
+    rgba(208, 208, 208, 0), 
+    rgba(208, 208, 208, 0.8) 20%, 
+    rgba(208, 208, 208, 0.8) 80%, 
+    rgba(208, 208, 208, 0)
+  );
+}
+
+.toggle-button {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.toggle-button.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.toggle-button:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #ddd;
+  opacity: 0.7;
+}
+
+/* 호버 효과는 disabled가 아닐 때만 적용 */
+.toggle-button:not(:disabled):hover {
+  background-color: #eee;
+}
+
+.toggle-button.active:not(:disabled):hover {
+  background-color: #45a049;
+}
+
+#tile-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+/* 9s 타일 다음에 줄바꿈용 div 추가 */
+#tile-selection::after {
+  content: '';
+  display: block;
+  width: 100%;
+  order: 27;  /* 9s 다음에 위치하도록 */
+  height: 10px;  /* 간격 조정 */
+}
+
+.tile_btn {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.tile {
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: border 0.2s;
+}
+
+.tile:hover {
+  border: 1px solid #007bff;
+}
+
+/* 회전된 패 스타일 */
+.tile.rotated {
+  transform: rotate(-90deg) translate(-10px, -10px);
+  margin-left: 20px;
+}
+
+#selected-tiles {
+  min-height: 64px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selected-tile {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.tile_btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tile_btn.disabled .tile {
+  filter: grayscale(100%);
+}
+
+.tile_btn:not(.disabled):hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* 모달 관련 스타일 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
+  border: none;
+  text-align: left;
+  z-index: 1001;
+}
+
+.settings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.settings-table td {
+  padding: 10px;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 600;
+}
+
+.settings-table td:first-child {
+  width: 100px;
+  
+}
+
+/* 테이블 내부 요소들 스타일 조정 */
+.settings-table .toggle-button-group,
+.settings-table .input-group {
+  display: flex;
+  gap: 5px;
+  margin: 0;
+}
+
+.settings-table input[type="number"] {
+  width: 40px;
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* input 화살표 버튼 제거 */
+.settings-table input[type="number"]::-webkit-inner-spin-button,
+.settings-table input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.settings-table input[type="number"] {
+  -moz-appearance: textfield;  /* Firefox */
+  appearance: textfield;  /* 표준 속성 */
+}
+
+
+
